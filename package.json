@@ -4,7 +4,7 @@
   "description": "Gephi file parser",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tap test/*.js"
   },
   "keywords": [
     "gephi",
@@ -15,5 +15,13 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/anvaka/ngraph.gexf"
+  },
+  "devDependencies": {
+    "tap": "~0.4.8"
+  },
+  "dependencies": {
+    "sax": "~0.6.0",
+    "ngraph.graph": "0.0.2",
+    "ngraph.events": "0.0.1"
   }
 }
