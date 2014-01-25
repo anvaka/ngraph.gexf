@@ -20,8 +20,9 @@
     "tap": "~0.4.8"
   },
   "dependencies": {
-    "sax": "~0.6.0",
     "ngraph.graph": "0.0.2",
-    "ngraph.events": "0.0.1"
+    "ngraph.events": "0.0.1",
+    "xpath.js": "0.0.3",
+    "xmldom": "~0.1.18"
   }
 }
