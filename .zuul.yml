@@ -1,8 +1,5 @@
 name: ngraph_gexf
 ui: mocha-qunit
-# html: templates.html
-#scripts:
-#  - "../pixi/pixi.dev.js"
 browsers:
   - name: chrome
     version: latest
