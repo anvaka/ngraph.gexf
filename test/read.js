@@ -1,6 +1,7 @@
-var test = require('tap').test,
-    gexf = require('../'),
-    fs = require('fs');
+var gexf = require('../'),
+    assert = require('assert'),
+    fs = require('fs'),
+    test = require('./testShim');
 
 test('Can read basic', function (t) {
   var graph = gexf.load(fs.readFileSync(__dirname + '/data/basic.gexf', 'utf8'));

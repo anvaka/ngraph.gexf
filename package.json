@@ -4,12 +4,19 @@
   "description": "Gephi file parser",
   "main": "index.js",
   "scripts": {
+    "testLocal": "zuul --local 31026 -- ./test/*.js",
     "test": "tap test/*.js"
   },
   "keywords": [
     "gephi",
     "ngraph"
   ],
+  "browserify": {
+    "transform": "brfs"
+  },
+  "browser": {
+    "./lib/xmlParser.js": "./lib/browser/xmlParser.js"
+  },
   "author": "Andrei Kashcha",
   "license": "MIT",
   "repository": {
@@ -17,7 +24,10 @@
     "url": "https://github.com/anvaka/ngraph.gexf"
   },
   "devDependencies": {
-    "tap": "~0.4.8"
+    "tap": "~0.4.8",
+    "mocha": "~1.17.1",
+    "zuul": "~1.5.1",
+    "brfs": "0.0.9"
   },
   "dependencies": {
     "ngraph.graph": "0.0.2",
