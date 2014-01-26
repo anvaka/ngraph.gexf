@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "testLocal": "zuul --local 31026 -- ./test/*.js",
+    "testRemote": "zuul -- ./test/*.js",
     "test": "tap test/*.js"
   },
   "keywords": [
