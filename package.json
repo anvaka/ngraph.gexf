@@ -22,7 +22,6 @@
   "dependencies": {
     "ngraph.graph": "0.0.2",
     "ngraph.events": "0.0.1",
-    "xpath.js": "0.0.3",
-    "xmldom": "~0.1.18"
+    "libxmljs": "~0.8.1"
   }
 }

@@ -33,18 +33,11 @@ test('Can read data', function (t) {
   t.equal(barabasiLab.label, 'BarabasiLab', 'Reads label');
   t.equal(barabasiLab.url, 'http://barabasilab.com', 'Reads data');
 
-  /*
   t.equal(barabasiLab.indegree, 1, 'Reads typed data');
   t.equal(barabasiLab.frog, false, 'Reads typed data');
 
   var gephi = graph.getNode('0').data;
-  t.equal(gephi.from, true, 'Respects defaults');
-  graph.forEachLink(function (link) {
-    t.equal(link.fromId, '0');
-    t.equal(link.toId, '1');
-    t.equal(link.id, '0');
-  });
-  */
+  t.equal(gephi.frog, true, 'Respects defaults');
 
   t.end();
 });
