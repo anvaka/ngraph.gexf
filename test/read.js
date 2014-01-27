@@ -42,3 +42,19 @@ test('Can read data', function (t) {
 
   t.end();
 });
+
+test('Can read viz data', function (t) {
+  var graph = gexf.load(fs.readFileSync(__dirname + '/data/viz.gexf', 'utf8'));
+  t.equal(graph.getNodesCount(), 1, 'has expected number of nodes');
+  t.equal(graph.getLinksCount(), 0, 'has expected number of links');
+
+  var glossy = graph.getNode('a').data;
+
+  t.equal(glossy.label, 'glossy', 'Reads label');
+  var color = glossy.viz.color;
+  var position = glossy.viz.position;
+  t.equal(glossy.viz.shape, 'disc', 'reads viz shape');
+  t.equal(glossy.viz.size, 2.42, 'reads size');
+
+  t.end();
+});
