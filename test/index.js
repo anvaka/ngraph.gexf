@@ -58,3 +58,21 @@ test('Can read viz data', function (t) {
 
   t.end();
 });
+
+test('can save graph', function (t) {
+  var graph = gexf.load(fs.readFileSync(__dirname + '/data/data.gexf', 'utf8'));
+  var saved = gexf.save(graph);
+  var reloaded = gexf.load(saved);
+  t.equal(reloaded.getNodesCount(), graph.getNodesCount(), 'Reloaded and saved has the same number of nodes');
+  t.equal(reloaded.getLinksCount(), graph.getLinksCount(), 'Reloaded and saved has the same number of links');
+
+  graph.forEachNode(function (node) {
+    var other = reloaded.getNode(node.id);
+    t.equal(other.id, node.id, 'Loaded node id is the same');
+    for (var key in node.data) {
+      t.equal(other.data[key], node.data[key], 'Loaded node label is the same');
+    }
+  });
+
+  t.end();
+});
