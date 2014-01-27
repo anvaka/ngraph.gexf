@@ -76,3 +76,21 @@ test('can save graph', function (t) {
 
   t.end();
 });
+
+test('can save ngraph.graph', function (t) {
+  var graph = require('ngraph.graph')();
+  graph.addLink(1, 2);
+  var saved = gexf.save(graph);
+  var reloaded = gexf.load(saved);
+
+  t.equal(reloaded.getNodesCount(), graph.getNodesCount(), 'Reloaded and saved has the same number of nodes');
+  t.equal(reloaded.getLinksCount(), graph.getLinksCount(), 'Reloaded and saved has the same number of links');
+
+  graph.forEachNode(function (node) {
+    var other = reloaded.getNode(node.id);
+    t.equal(other.id, node.id, 'Loaded node id is the same');
+  });
+
+  t.end();
+});
+
