@@ -1,6 +1,6 @@
 {
   "name": "ngraph.gexf",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Gephi file parser",
   "main": "index.js",
   "scripts": {
@@ -12,9 +12,6 @@
     "gephi",
     "ngraph"
   ],
-  "browserify": {
-    "transform": "brfs"
-  },
   "browser": {
     "./lib/xmlParser.js": "./lib/browser/xmlParser.js"
   },
