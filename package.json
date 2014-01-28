@@ -1,6 +1,6 @@
 {
   "name": "ngraph.gexf",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Gephi file parser",
   "main": "index.js",
   "scripts": {
