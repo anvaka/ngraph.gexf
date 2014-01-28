@@ -43,6 +43,25 @@ test('Can read data', function (t) {
   t.end();
 });
 
+test('Can read both id and for for attributes', function (t) {
+  // looks like some apps are using 'id' instead of 'for' to map their attributes
+  // let's check we support it
+  var graph = gexf.load(fs.readFileSync(__dirname + '/data/attrAsId.gexf', 'utf8'));
+  t.equal(graph.getNodesCount(), 2, 'has expected number of nodes');
+  t.equal(graph.getLinksCount(), 0, 'has expected number of links');
+
+  var gephi = graph.getNode('0').data;
+
+  t.equal(gephi.label, 'Gephi', 'Reads label');
+  t.equal(gephi.url, 'http://gephi.org', 'Reads data');
+
+  var webatlas = graph.getNode('1').data;
+  t.equal(webatlas.label, 'Webatlas', 'Reads data');
+  t.equal(webatlas.url, 'http://webatlas.fr', 'Reads data');
+
+  t.end();
+});
+
 test('Can read viz data', function (t) {
   var graph = gexf.load(fs.readFileSync(__dirname + '/data/viz.gexf', 'utf8'));
   t.equal(graph.getNodesCount(), 1, 'has expected number of nodes');
