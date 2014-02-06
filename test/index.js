@@ -24,6 +24,14 @@ test('Can read basic', function (t) {
   t.end();
 });
 
+test('Always use strings as ids', function (t) {
+  var graph = gexf.load(fs.readFileSync(__dirname + '/data/strings.gexf', 'utf8'));
+
+  t.equal(graph.getNodesCount(), 2, 'has two nodes');
+  t.equal(graph.getLinksCount(), 1, 'has one link');
+  t.end();
+});
+
 test('Can read data', function (t) {
   var graph = gexf.load(fs.readFileSync(__dirname + '/data/data.gexf', 'utf8'));
   t.equal(graph.getNodesCount(), 4, 'has expected number of nodes');
@@ -98,7 +106,7 @@ test('can save graph', function (t) {
 
 test('can save ngraph.graph', function (t) {
   var graph = require('ngraph.graph')();
-  graph.addLink(1, 2);
+  graph.addLink("1", "2");
   var saved = gexf.save(graph);
   var reloaded = gexf.load(saved);
 

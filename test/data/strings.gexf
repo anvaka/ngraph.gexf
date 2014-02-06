@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gexf xmlns="http://www.gexf.net/1.3draft" version="1.2">
+    <graph mode="static" defaultedgetype="directed">
+        <nodes>
+            <node id="104485795" label="Hello" />
+            <node id="03722199X" label="World" />
+        </nodes>
+        <edges>
+            <edge id="0" source="104485795" target="03722199X" />
+        </edges>
+    </graph>
+</gexf>
