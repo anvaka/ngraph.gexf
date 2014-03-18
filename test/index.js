@@ -24,6 +24,28 @@ test('Can read basic', function (t) {
   t.end();
 });
 
+test('Reads link weights', function (t) {
+  var graph = gexf.load(fs.readFileSync(__dirname + '/data/weights.gexf', 'utf8'));
+
+  t.equal(graph.getNodesCount(), 2, 'has two nodes');
+  t.equal(graph.getLinksCount(), 1, 'has one link');
+
+  var hello = graph.getNode('0');
+  var world = graph.getNode('1');
+
+  t.equal(hello.data.label, 'Hello', 'Reads label');
+  t.equal(world.data.label, 'World', 'Reads label');
+
+  graph.forEachLink(function (link) {
+    t.equal(link.fromId, '0');
+    t.equal(link.toId, '1');
+    t.equal(link.id, '0');
+    t.equal(link.weight, 2.4);
+  });
+
+  t.end();
+});
+
 test('Always use strings as ids', function (t) {
   var graph = gexf.load(fs.readFileSync(__dirname + '/data/strings.gexf', 'utf8'));
 
@@ -106,7 +128,8 @@ test('can save graph', function (t) {
 
 test('can save ngraph.graph', function (t) {
   var graph = require('ngraph.graph')();
-  graph.addLink("1", "2");
+  var link = graph.addLink("1", "2");
+  link.weight = 10;
   var saved = gexf.save(graph);
   var reloaded = gexf.load(saved);
 
@@ -117,6 +140,8 @@ test('can save ngraph.graph', function (t) {
     var other = reloaded.getNode(node.id);
     t.equal(other.id, node.id, 'Loaded node id is the same');
   });
+  var other = reloaded.hasLink("1", "2");
+  t.equal(other.weight, link.weight);
 
   t.end();
 });
