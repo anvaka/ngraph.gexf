@@ -1,6 +1,6 @@
 # ngraph.gexf
 
-Gephi [`gexf`](http://gexf.net/format/) file parser for server and browser. This library is a part of [ngraph](https://github.com/anvaka/ngraph) project.
+Gephi [`gexf`](http://gexf.net/format/) file parser for server and browser. This library is a part of [ngraph](https://github.com/anvaka/ngraph) project. See demo here: [Talking with Gephi](https://github.com/anvaka/ngraph/tree/master/examples/storage/gephi)
 
 [![Build Status](https://travis-ci.org/anvaka/ngraph.gexf.png?branch=master)](https://travis-ci.org/anvaka/ngraph.gexf)
 
