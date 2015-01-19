@@ -28,8 +28,8 @@
     "brfs": "0.0.9"
   },
   "dependencies": {
-    "ngraph.graph": "0.0.2",
-    "ngraph.events": "0.0.1",
+    "ngraph.graph": "0.0.6",
+    "ngraph.events": "0.0.3",
     "libxmljs": "~0.8.1"
   }
 }
