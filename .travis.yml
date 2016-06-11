@@ -5,3 +5,10 @@ node_js:
   - "6.2.1"
   - "4.4.5"
   - "0.12"
+ addons:
+   apt:
+     sources:
+     - ubuntu-toolchain-r-test
+     packages:
+     - gcc-4.8
+     - g++-4.8
