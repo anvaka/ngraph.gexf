@@ -22,10 +22,10 @@
     "url": "https://github.com/anvaka/ngraph.gexf"
   },
   "devDependencies": {
-    "tap": "~0.4.8",
-    "mocha": "~1.17.1",
-    "zuul": "~1.5.1",
-    "brfs": "0.0.9"
+    "brfs": "^1.4.3",
+    "mocha": "^2.5.3",
+    "tap": "^5.7.2",
+    "zuul": "^3.10.1"
   },
   "dependencies": {
     "libxmljs": "^0.18.0",
