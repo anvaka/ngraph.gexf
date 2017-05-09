@@ -32,12 +32,12 @@ Because of this, library size is really small when served in the browser:
 
 * 24kb - unminified
 * 13kb - minified
-* 4kb - gziped
+* 4kb - gzipped 
 
 Current implementation is really basic and does not support some of the gexf features:
-* Dynamics - http://gexf.net/format/dynamics.html
-* Hierarchy - http://gexf.net/format/hierarchy.html
-* Phylogeny - http://gexf.net/format/phylogeny.html
+* Dynamics - https://gephi.org/gexf/format/dynamics.html
+* Hierarchy - https://gephi.org/gexf/format/hierarchy.html
+* Phylogeny - https://gephi.org/gexf/format/phylogeny.html
 
 Adding Hierarchy and Phylogeny is relatively easy and they will be implemented
 if such need arise. Dynamics - requires to think a little bit to better represent
