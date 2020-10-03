@@ -30,6 +30,6 @@
   "dependencies": {
     "libxmljs": "^0.18.0",
     "ngraph.events": "0.0.3",
-    "ngraph.graph": "0.0.12"
+    "ngraph.graph": "19.1.0"
   }
 }
