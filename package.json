@@ -28,7 +28,7 @@
     "zuul": "^3.10.1"
   },
   "dependencies": {
-    "libxmljs": "^0.18.0",
+    "libxmljs": "^0.19.7",
     "ngraph.events": "0.0.3",
     "ngraph.graph": "19.1.0"
   }
