@@ -4,7 +4,7 @@
   "description": "Gephi file parser",
   "main": "index.js",
   "scripts": {
-    "test": "tap --branches=80 --lines=80 --statements=80 --functions=80 test/*.js"
+    "test": "tap --branches=65 --lines=80 --statements=80 --functions=80 test/*.js"
   },
   "keywords": [
     "gephi",
@@ -25,6 +25,7 @@
   "dependencies": {
     "libxmljs": "^0.19.7",
     "ngraph.events": "0.0.3",
-    "ngraph.graph": "20.0.0"
+    "ngraph.graph": "20.0.0",
+    "streaming-svg-parser": "^1.1.0"
   }
 }

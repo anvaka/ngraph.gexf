@@ -18,7 +18,7 @@ test('Can read basic', function (t) {
   graph.forEachLink(function (link) {
     t.equal(link.fromId, '0');
     t.equal(link.toId, '1');
-    t.equal(link.id, '0');
+    t.equal(link.data.id, '0');
   });
 
   t.end();
@@ -39,8 +39,8 @@ test('Reads link weights', function (t) {
   graph.forEachLink(function (link) {
     t.equal(link.fromId, '0');
     t.equal(link.toId, '1');
-    t.equal(link.id, '0');
-    t.equal(link.weight, 2.4);
+    t.equal(link.data.id, '0');
+    t.equal(link.data.weight, '2.4');
   });
 
   t.end();
@@ -51,6 +51,8 @@ test('Always use strings as ids', function (t) {
 
   t.equal(graph.getNodesCount(), 2, 'has two nodes');
   t.equal(graph.getLinksCount(), 1, 'has one link');
+  t.ok(graph.hasNode('03722199X'), 'has node 03722199X');
+  t.ok(graph.hasNode('104485795'), 'has node 104485795');
   t.end();
 });
 
@@ -100,10 +102,10 @@ test('Can read viz data', function (t) {
   var glossy = graph.getNode('a').data;
 
   t.equal(glossy.label, 'glossy', 'Reads label');
-  var color = glossy.viz.color;
-  var position = glossy.viz.position;
+  t.ok(glossy.viz.color, 'color exists');
+  t.ok(glossy.viz.position, 'position exists');
   t.equal(glossy.viz.shape, 'disc', 'reads viz shape');
-  t.equal(glossy.viz.size, 2.42, 'reads size');
+  t.equal(glossy.viz.size, '2.42', 'reads size');
 
   t.end();
 });
@@ -128,8 +130,7 @@ test('can save graph', function (t) {
 
 test('can save ngraph.graph', function (t) {
   var graph = require('ngraph.graph')();
-  var link = graph.addLink("1", "2");
-  link.weight = 10;
+  var link = graph.addLink("1", "2", {weight: '10'});
   var saved = gexf.save(graph);
   var reloaded = gexf.load(saved);
 
@@ -141,8 +142,7 @@ test('can save ngraph.graph', function (t) {
     t.equal(other.id, node.id, 'Loaded node id is the same');
   });
   var other = reloaded.hasLink("1", "2");
-  t.equal(other.weight, link.weight);
+  t.equal(other.data.weight, link.data.weight);
 
   t.end();
 });
-
