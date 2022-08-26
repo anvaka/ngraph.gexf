@@ -23,8 +23,7 @@
     "tap": "^16.0.1"
   },
   "dependencies": {
-    "libxmljs": "^0.19.7",
-    "ngraph.events": "0.0.3",
+    "ngraph.events": "1.2.2",
     "ngraph.graph": "20.0.0",
     "streaming-svg-parser": "^1.1.0"
   }
